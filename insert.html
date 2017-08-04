@@ -1,0 +1,47 @@
+<html ng-app="insertStore">
+<head>
+	<meta charset="utf-8" /> 
+
+	<title>Nova Loja</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+
+
+	<script src="lib/angular/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src ="js/controllers/insertStoreCtrl.js"></script>
+</head>
+
+
+<body ng-controller="insertStoreCtrl">
+	<div class="jumbotron jumbotron2">
+
+		<table>
+			<tr>
+				<th><button class="btn btnBack" ng-click="goBack()"><-</button></th>
+				<th><h3>{{app}}</h3></th>
+			</tr>
+		</table>
+
+		<hr/>
+
+		<input class="form-control" type="text" ng-model="contato.id" placeholder="ID"/>
+		<input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome"/>
+		<select class="form-control" ng-model="contato.loc" ng-options="loc.nome for loc in locs">
+			<option value="">Selecione uma localizacao</option>
+		</select>
+
+
+		<button class="btn btn-primary btn-block"ng-click="adicionar(contato)" ng-disabled="!contato.nome || !contato.id || !contato.loc">Adicionar contato</button>
+		<h4>{{result}}</h4>
+
+
+	</div>
+
+</body>
+
+<footer>
+	<div ng-include="'view/footer.html'"></div>
+</footer>
+
+</html>

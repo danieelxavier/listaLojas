@@ -1,0 +1,53 @@
+<html ng-app="buscaLojas">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Lojas</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/buscaLojaCtrl.js"></script>
+</head>
+
+
+<body ng-controller="buscaLojasCtrl">
+    <div class="jumbotron">
+        <h3>{{app}}</h3>
+
+        <table class="table">
+            <tr>
+                <th><button class="btn btn-primary btn-block" ng-click="changeToSearchGeneral()" ng-disabled="selectedB1()">Busca geral</button></th>
+                <th><button class="btn btn-primary btn-block" ng-click="changeToSearchStore()" ng-disabled="selectedB2()">Busca por loja</button></th>
+                <th><button class="btn btn-primary btn-block" ng-click="changeToSearchByCategory()" ng-disabled="selectedB3()">Busca por categoria</button></th>
+            </tr>
+        </table>
+
+        <div>
+            <input class="form-control" type="text" ng-model="text" ng-keydown="searchStores(text)" placeholder="Buscar" />
+            <!-- <button  ng-click="searchStores(text)">></button> -->
+        </div>
+
+        <table ng-show="contatos.length > 0" class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos">
+                <td>{{contato.store_id}}</td>
+                <td>{{contato.store_name}}</td>
+            </tr>
+        </table>
+
+        <hr/>
+
+        <button class="btn btn-block" ng-click="goToInsertPage()">Inserir loja</button>
+
+
+    </div>
+
+    <div ng-include="'view/footer.html'"></div>
+</body>
+
+</html>

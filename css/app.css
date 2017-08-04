@@ -1,0 +1,52 @@
+.jumbotron {
+    /*position: relative;*/
+    width: 600px;
+    min-height: 500px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.jumbotron2 {
+    /*position: relative;*/
+    width: 600px;
+    min-height: 500px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 120px 20px 120px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.selecionado {
+    background-color: yellow
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+.btNew {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+    text-align: center;
+}
+
+.btnBack {
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 0px 5px 2px 5px;
+    color: white;
+    background-color: #0C3A49
+}
